@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Container para o formulário */
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
+/* Estilo dos botões */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Estilos específicos para cada botão */
+#btn-cadastrar {
+  background-color: #28a745; /* Cor verde para cadastrar */
+}
+
+#btn-cadastrar:hover {
+  background-color: #218838; /* Cor verde escuro ao passar o mouse */
+}
+
+#btn-alterar {
+  background-color: #ffc107; /* Cor amarela para alterar */
+}
+
+#btn-alterar:hover {
+  background-color: #e0a800; /* Cor amarela escuro ao passar o mouse */
+}
+
+#btn-deletar {
+  background-color: #dc3545; /* Cor vermelha para deletar */
+}
+
+#btn-deletar:hover {
+  background-color: #c82333; /* Cor vermelha escuro ao passar o mouse */
+}
+
+
+  
+  
+  #message {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #pesquisa {
+    margin-top: 30px;
+  }
+  
+  #usuarios {
+    margin-top: 20px;
+  }
+  
+  #result-pesquisa {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+  }
+  

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Cadastro de Usuário</h1>
+
+    <!-- Tela de Cadastro -->
+    <div id="tela-cadastro" class="tela">
+      <form id="form-cadastro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+        
+        <button type="submit" id="btn-cadastrar">Cadastrar</button>
+        <button type="button" id="btn-usuarios" onclick="mostrarUsuarios()">Usuários Cadastrados</button>
+      </form>
+
+      <div id="message"></div>
+    </div>
+
+    <!-- Tela de Usuários Cadastrados -->
+    <div id="tela-usuarios" class="tela" style="display: none;">
+      <h2>Usuários Cadastrados</h2>
+      <ul id="lista-usuarios"></ul>
+      <button onclick="mostrarCadastro()">Voltar ao Cadastro</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
