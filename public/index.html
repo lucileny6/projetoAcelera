@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+  <title>Controle Arduino</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    label, button { margin: 5px 0; display: block; }
+    #mensagensArduino { border: 1px solid #ccc; padding: 10px; height: 100px; overflow-y: auto; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+  </style>
+</head>
+<body>
+
+  <h1>Controle Arduino</h1>
+
+  <section>
+    <h2>Programar Horário</h2>
+    <label for="horario">Horário (AAAA-MM-DDTHH:MM):</label>
+    <input type="datetime-local" id="horario" />
+    
+    <label for="acao">Ação:</label>
+    <select id="acao">
+      <option value="LIGAR">Ligar LED</option>
+      <option value="DESLIGAR">Desligar LED</option>
+    </select>
+    
+    <button id="btnProgramar">Programar</button>
+  </section>
+
+  <section>
+    <h2>Horários Programados</h2>
+    <button id="btnListar">Atualizar lista</button>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Horário</th><th>Ação</th></tr>
+      </thead>
+      <tbody id="listaHorarios">
+        <!-- Linhas serão inseridas aqui -->
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Mensagens do Arduino</h2>
+    <div id="mensagensArduino"></div>
+  </section>
+
+  <section>
+    <h2>Controle Manual</h2>
+    <button id="btnLigar">Ligar LED</button>
+    <button id="btnDesligar">Desligar LED</button>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Atualiza lista de horários
+    async function listarHorarios() {
+      const res = await fetch('/horarios');
+      const data = await res.json();
+      const tbody = document.getElementById('listaHorarios');
+      tbody.innerHTML = '';
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${item.id}</td><td>${new Date(item.horario).toLocaleString()}</td><td>${item.acao}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Programar novo horário
+    document.getElementById('btnProgramar').addEventListener('click', async () => {
+      const horario = document.getElementById('horario').value;
+      const acao = document.getElementById('acao').value;
+      if (!horario) {
+        alert('Informe o horário');
+        return;
+      }
+      const res = await fetch('/programar', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ horario, acao })
+      });
+      const json = await res.json();
+      alert(json.message);
+      listarHorarios();
+    });
+
+    // Botões ligar/desligar
+    document.getElementById('btnLigar').addEventListener('click', async () => {
+      await fetch('/led/on', { method: 'POST' });
+      alert('LED ligado');
+      listarHorarios();
+    });
+
+    document.getElementById('btnDesligar').addEventListener('click', async () => {
+      await fetch('/led/off', { method: 'POST' });
+      alert('LED desligado');
+      listarHorarios();
+    });
+
+    // Ouve mensagens do Arduino via WebSocket
+    const mensagensDiv = document.getElementById('mensagensArduino');
+    socket.on('arduinoData', (msg) => {
+      const p = document.createElement('p');
+      p.textContent = msg;
+      mensagensDiv.appendChild(p);
+      mensagensDiv.scrollTop = mensagensDiv.scrollHeight;
+    });
+
+    // Atualiza a lista quando carregar a página
+    listarHorarios();
+  </script>
+
+</body>
+</html>
