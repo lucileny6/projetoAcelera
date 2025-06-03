@@ -2,8 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="style.css">
-  <title>Controle Arduino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configuração</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/banner.css" />
+    <link rel="stylesheet" href="./styles/cartaz.css" />
+    <link rel="stylesheet" href="./styles/filme-lista.css" />
+    <link rel="stylesheet" href="./styles/combo.css" />
+    <link rel="stylesheet" href="./styles/newsletter.css" />
+    <link rel="stylesheet" href="./styles/separador.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     label, button { margin: 5px 0; display: block; }
@@ -13,46 +28,84 @@
   </style>
 </head>
 <body>
+  <header class="header">
+    <nav class="nav" aria-label="navegação principal">
+      <ul class="nav__list">
+        <li class="menu__toggle">
+          <button class="menu__toggle__icon" aria-label="menu hamburguer">
+            <img src="./images/menu.svg" alt="menu hamburguer" />
+          </button>
+        </li>
+        <li class="nav__item">
+          <a href="principal.html" class="nav__link">Voltar</a>
+          <button class="nav__item" aria-label="Voltar"></button>
+        </li>
+        <li class="nav__item">
+          <a href="index.html">
+            <video autoplay loop muted width="90" height="90">
+              <source src="./videos/logoRelogio.mp4" type="video/mp4" />
+            </video>
+          </a>
+        </li>
 
-  <h1>Controle Arduino</h1>
+        <li class="nav__item"><a href="#" class="nav__link">Início</a></li>
+        <li class="nav__item"><a href="index.html" class="nav__link">Configuração</a></li>
+        <li class="nav__item"><a href="#" class="nav__link">Sobre o Projeto</a></li>
 
-  <section>
-    <h2>Programar Horário</h2>
-    <label for="horario">Horário (AAAA-MM-DDTHH:MM):</label>
-    <input type="datetime-local" id="horario" />
+        <li class="nav__item nav__icons">
+          <a href="#" aria-label="Whatsapp">
+            <img src="./images/Whatsapp.svg" alt="Whatsapp" />
+          </a>
+          <a href="#" aria-label="Perfil">
+            <img src="./images/Perfil.svg" alt="Meu Perfil" />
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <h1>Controle Arduino</h1>
+
+    <section>
+      <h2>Programar Horário</h2>
+      <label for="horario">Horário (AAAA-MM-DDTHH:MM):</label>
+      <input type="datetime-local" id="horario" />
     
-    <label for="acao">Ação:</label>
-    <select id="acao">
-      <option value="LIGAR">Ligar LED</option>
-      <option value="DESLIGAR">Desligar LED</option>
-    </select>
+      <label for="acao">Ação:</label>
+      <select id="acao">
+        <option value="LIGAR">Ligar LED</option>
+        <option value="DESLIGAR">Desligar LED</option>
+      </select>
     
-    <button id="btnProgramar">Programar</button>
-  </section>
+      <button id="btnProgramar">Programar</button>
+    </section>
 
-  <section>
-    <h2>Horários Programados</h2>
-    <button id="btnListar">Atualizar lista</button>
-    <table>
-      <thead>
-        <tr><th>ID</th><th>Horário</th><th>Ação</th></tr>
-      </thead>
-      <tbody id="listaHorarios">
-        <!-- Linhas serão inseridas aqui -->
-      </tbody>
-    </table>
-  </section>
+    <section>
+      <h2>Horários Programados</h2>
+      <button id="btnListar">Atualizar lista</button>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Horário</th><th>Ação</th></tr>
+        </thead>
+        <tbody id="listaHorarios">
+          <!-- Linhas serão inseridas aqui -->
+        </tbody>
+      </table>
+    </section>
 
-  <section>
-    <h2>Mensagens do Arduino</h2>
-    <div id="mensagensArduino"></div>
-  </section>
+    <section>
+      <h2>Mensagens do Arduino</h2>
+      <div id="mensagensArduino"></div>
+    </section>
 
-  <section>
-    <h2>Controle Manual</h2>
-    <button id="btnLigar">Ligar LED</button>
-    <button id="btnDesligar">Desligar LED</button>
-  </section>
+    <section>
+      <h2>Controle Manual</h2>
+      <button id="btnLigar">Ligar LED</button>
+      <button id="btnDesligar">Desligar LED</button>
+    </section>
+  </main>
 
   <script src="/socket.io/socket.io.js"></script>
   <script>
