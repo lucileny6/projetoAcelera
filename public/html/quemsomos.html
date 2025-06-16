@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre o Projeto</title>
+  <title>Quem Somos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./home.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/banner.css" />
-    <link rel="stylesheet" href="./styles/cartaz.css" />
-    <link rel="stylesheet" href="./styles/filme-lista.css" />
-    <link rel="stylesheet" href="./styles/combo.css" />
-    <link rel="stylesheet" href="./styles/newsletter.css" />
-    <link rel="stylesheet" href="./styles/separador.css" />
-    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="../home.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/banner.css" />
+    <link rel="stylesheet" href="../styles/cartaz.css" />
+    <link rel="stylesheet" href="../styles/filme-lista.css" />
+    <link rel="stylesheet" href="../styles/combo.css" />
+    <link rel="stylesheet" href="../styles/newsletter.css" />
+    <link rel="stylesheet" href="../styles/separador.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
 </head>
 <body>
   <header class="header">
@@ -26,17 +26,14 @@
       <ul class="nav__list">
         <li class="menu__toggle">
           <button class="menu__toggle__icon" aria-label="menu hamburguer">
-            <img src="./images/menu.svg" alt="menu hamburguer" />
+            <img src="../images/menu.svg" alt="menu hamburguer" />
           </button>
         </li>
-        <li class="nav__item">
-            <a href="principal.html" class="nav__link">Voltar</a>
-            <button class="nav__item" aria-label="Voltar"></button>
-        </li>
+        <a href="principal.html" class="btn">Voltar</a>
         <li class="nav__item">
           <a href="index.html">
             <video autoplay loop muted width="90" height="90">
-              <source src="./videos/logoRelogio.mp4" type="video/mp4" />
+              <source src="../videos/logoRelogio.mp4" type="video/mp4" />
             </video>
           </a>
         </li>
@@ -47,11 +44,12 @@
 
         <li class="nav__item nav__icons">
           <a href="#" aria-label="Whatsapp">
-            <img src="./images/Whatsapp.svg" alt="Whatsapp" />
+            <img src="../images/Whatsapp.svg" alt="Whatsapp" />
           </a>
-          <a href="#" aria-label="Perfil">
-            <img src="./images/Perfil.svg" alt="Meu Perfil" />
-          </a>
+          <div class="perfil">
+            <img src= "../images/Perfil.svg" alt="Meu perfil" class="avatar">
+            <span class="nome-usuario">Nome do Usuário</span>
+          </div>
         </li>
       </ul>
     </nav>

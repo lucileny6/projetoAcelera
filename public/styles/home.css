@@ -1,4 +1,3 @@
-
 :root {
     --cor-texto: #1e1e1e;
     --cor-texto-hover: #252530;
@@ -54,8 +53,6 @@
         --line-height-l: 2rem;
         --line-height-xl: 2.5rem;
         --line-height-xxl: 5.7rem;
-    
-
 }
 
 * {
@@ -64,6 +61,7 @@
     box-sizing: border-box;
     font-size: 16px;
 }
+
 html, body {
   height: 100%;
 }
@@ -77,6 +75,7 @@ body {
   flex: 1;
   background-color: #2c4766; /* azul */
 }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -97,4 +96,41 @@ body {
 
 .rodape-azul {
   background-color: #2c4766;
+}
+
+.nav__item video {
+  transform: translateX(-400px); /* Ajuste esse valor conforme o quanto você quer mover */
+  display: block;
+  margin-right: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav__item.nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 500;
 }
