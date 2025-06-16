@@ -10,29 +10,34 @@
     <div class = "container">
         <div class = "login-box">
             <h2>Cadastro</h2>
-            <form action = "#">
+            <form id= "formCadastro">
                 <div class = "input-box">
-                    <input type = "text" required>
+                    <input type = "text" id="nome" required>
                     <label>Nome Completo</label>
                 </div>
                 <div class="input-box">
-                    <input type="tel" required>
+                    <input type="tel" id= "telefone" required/>
                     <label>Telefone</label>
                 </div>
                 <div class="input-box">
-                    <input type="email" required>
+                    <input type="email" id="email" required/>
                     <label>Email</label>
                 </div>
                 <div class = "input-box">
-                    <input type = "password" requered>
+                    <input type = "password" id= "senha" required/>
                     <label>Senha</label>
+                    
                 </div>
                 <div class="button-group">
-                    <a href="principal.html" class = "btn">Cadastre-se</a>
-                    <a href="home.html" class="btn small-btn">Voltar</a>
+                    <button type = "button" class="btn" onclick="cadastrarUsuario()">Cadastre-se</button>
+                
+                   
                 </div>
             </form>
         </div>
+
+        <script src="cadastro.js"></script>
+
     <span style = "--i:0"></span>
     <span style = "--i:1"></span>
     <span style = "--i:2"></span>

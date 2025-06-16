@@ -1,20 +1,5 @@
 {
-  "name": "api01",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "destroy": "^1.2.0",
-    "es-object-atoms": "^1.1.1",
-    "express": "^4.21.2",
-    "socket.io": "^4.8.1",
-    "sqlite3": "^5.1.7"
-  }
+  "idusuario": 1,
+  "horario": "2025-06-10 14:30:00",
+  "acao": "Consulta médica"
 }

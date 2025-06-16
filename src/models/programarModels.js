@@ -1,13 +1,29 @@
-const fs = require('fs');
-const filePath = 'horarios.json';
+// src/models/programarodels.js
+const db = require('./db');
 
-function salvarHorario(horario) {
-  let horarios = [];
-  if (fs.existsSync(filePath)) {
-    horarios = JSON.parse(fs.readFileSync(filePath));
-  }
-  horarios.push(horario);
-  fs.writeFileSync(filePath, JSON.stringify(horarios, null, 2));
+function salvarHorario(horario, callback) {
+  const { idusuario, horario: dataHorario, acao } = horario;
+
+  const sql = `INSERT INTO horario (idusuario, horario, acao) VALUES (?, ?, ?)`;
+  db.run(sql, [idusuario, dataHorario, acao], function(err) {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, { id: this.lastID });
+  });
 }
 
-module.exports = { salvarHorario };
+function listarHorarios(callback) {
+  const sql = `SELECT * FROM horario`;
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, rows);
+  });
+}
+
+module.exports = {
+  salvarHorario,
+  listarHorarios,
+};
