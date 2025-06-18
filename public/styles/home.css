@@ -134,3 +134,39 @@ body {
   color: var(--cor-texto);
   font-weight: 500;
 }
+
+.nav__icons img{
+  width: 24px;
+  height: 24px;
+  margin: 0 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.nav__icons img:hover {
+  transform: scale(1.1);
+}
+
+/* Para alinhar bem os itens da navegação */
+.nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  list-style: none;
+  gap: 0.75rem;
+}
+
+/* Botões de login e cadastro, se quiser deixar com cara de botão: */
+.nav__item a.nav__link {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.nav__item a.nav__link:hover {
+  background-color: #e6e6e6;
+}
