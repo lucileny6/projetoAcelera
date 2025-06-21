@@ -1,11 +1,6 @@
 {
-  "idusuario": 1,
-  "horario": "2025-06-10 14:30:00",
-  "acao": "Consulta médica",
-  "dependencies": {
-    "express": "^5.1.0",
-    "serialport": "^13.0.0",
-    "socket.io": "^4.8.1",
-    "sqlite3": "^5.1.7"
-  }
+  "nome": "Seu Nome",
+  "telefone": "123456789",
+  "email": "email@exemplo.com",
+  "senha": "suaSenha123"
 }

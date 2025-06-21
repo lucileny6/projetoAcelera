@@ -3,8 +3,15 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 
+router.post('/cadastrar', (req, res) => {
+  console.log("Dados recebidos no cadastro:", req.body);
+  // resto do código do cadastro...
+});
+
+
 // Conectar com o banco agenda.db (mesmo banco do app.js)
-const db = new sqlite3.Database('agenda.db');
+const db = require('../models/db');
+
 
 // Rota GET para listar todos os horários
 router.get('/', (req, res) => {
