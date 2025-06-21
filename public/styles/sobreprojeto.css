@@ -117,7 +117,7 @@ body {
 }
 
 .nav__item video {
-  transform: translateX(-700px);
+  transform: translateX(-800px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -125,5 +125,5 @@ body {
 }
 
 .nav__item {
-  transform: translateX(+300px);
+  transform: translateX(+400px);
 }

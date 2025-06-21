@@ -8,28 +8,17 @@
     <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"rel="stylesheet"/>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/banner.css" />
-    
   </head>
-
   <body>
     <header class="header">
       <nav class="nav" aria-label="navegação principal">
         <ul class="nav__list">
-          <li class="menu__toggle">
-            <button class="menu__toggle__icon" aria-label="menu hamburguer">
-              <img src="./images/menu.svg" alt="menu hamburguer" />
-            </button>
-          </li>
-
           <li class="nav__item">
             <a href="index.html">
               <video autoplay loop muted width="230" height="200">
@@ -37,7 +26,12 @@
               </video>
             </a>
           </li>
-
+          <li class="menu__toggle">
+            <button class="menu__toggle__icon" aria-label="menu hamburguer">
+              <img src="./images/menu.svg" alt="menu hamburguer" />
+            </button>
+          </li>
+  
           <li class="nav__item">
             <a href="#" class="nav__link">Início</a>
           </li>
@@ -47,33 +41,29 @@
           </li>
 
           <li class="nav__item">
-            <a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a>  
+            <a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a>
           </li>
-          
-          <li class="nav__item nav__icons">
-            <a href="#" aria-label="Perfil">
-              <img src="./images/Perfil.svg" alt="Meu Perfil" />
-            </a>
-          </li>
+
           <li class="nav__item">
-            <a href="login.html" class="nav__link">Login</a>
+            <a href="quemsomos.html" class="nav__link">Quem Somos</a>
           </li>
-          <li class="nav__item">
-            <a href="cadastro.html" class="nav__link">Cadastre-se</a>
-          </li>
+  
+          <div class="nav__item  nav__auth">
+            <a href="login.html" class="btn">Login</a>
+            <a href="cadastro.html" class="btn">Cadastre-se</a>
+          </div>
         </ul>
       </nav>
     </header>
-
+    
     <!-- Faixa azul principal -->
     <section class="faixa-azul"></section>
-
+    
     <!-- Rodapé -->
     <footer class="rodape-azul">
       <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
     </footer>
-
+    
     <script defer src="index.js"></script>
   </body>
-</html>
-
+</html> 
