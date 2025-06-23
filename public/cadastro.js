@@ -1,4 +1,7 @@
-async function cadastrarUsuario() {
+console.log("Arquivo cadastro.js carregado!");
+
+  async function cadastrarUsuario() {
+    console.log("Função cadastrarUsuario foi chamada!");
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
     const email = document.getElementById('email').value;
@@ -7,7 +10,7 @@ async function cadastrarUsuario() {
     const data = { nome, telefone, email, senha };
   
     try {
-      const response = await fetch('/usuarios/cadastrar', {
+      const response = await fetch('/usuarios', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
