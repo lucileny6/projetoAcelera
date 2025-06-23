@@ -19,6 +19,9 @@ app.use('/usuarios', usuariosRouter);
 const horarioRouter = require('./routes/horarios'); // Adicione esta linha
 app.use('/horario', horarioRouter); // E esta
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
+
 
 
 // Banco de dados SQLite
@@ -33,9 +36,10 @@ const db = new sqlite3.Database("agenda.db", (err) => {
 // Servir arquivos estáticosnode
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/home.html"));
+});
 
 app.use(express.static(path.join(__dirname, "../public/")));
-});
+
 
 
 
