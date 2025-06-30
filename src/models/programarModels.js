@@ -1,4 +1,4 @@
-// src/models/programarodels.js
+// src/models/programarModels.js
 const db = require('./db');
 
 function salvarHorario(horario, callback) {
@@ -23,7 +23,18 @@ function listarHorarios(callback) {
   });
 }
 
+function verificarUsuario(idusuario, callback) {
+  const sql = `SELECT * FROM usuarios WHERE id = ?`;
+  db.get(sql, [idusuario], (err, row) => {
+    if (err) {
+      return callback(err);
+    }
+    callback(null, !!row); // true se encontrou, false se não
+  });
+}
+
 module.exports = {
   salvarHorario,
   listarHorarios,
+  verificarUsuario
 };

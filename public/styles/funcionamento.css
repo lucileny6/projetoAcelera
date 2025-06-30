@@ -1,0 +1,29 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #2c4766;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    color: #333;
+  }
+  
+  .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

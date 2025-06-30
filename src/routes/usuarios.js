@@ -4,6 +4,7 @@ const db = require('../models/db');
 
 // POST - Cadastrar usuário
 router.post('/', (req, res) => {
+  console.log("requisisão de cadastro recebida", req.body)
   const { nome, telefone, email, senha } = req.body;
 
   if (!nome || !email || !senha) {
@@ -27,4 +28,32 @@ router.post('/', (req, res) => {
   });
 });
 
+// POST - Login do usuário
+router.post('/login', (req, res) => {
+  const { email, senha } = req.body;
+
+  if (!email || !senha) {
+    return res.status(400).json({ error: "Email e senha são obrigatórios." });
+  }
+  // Verificar se usuário e senha batem
+  db.get("SELECT * FROM usuarios WHERE email = ? AND senha = ?", [email, senha], (err, usuario) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (!usuario) return res.status(401).json({ error: "Email ou senha inválidos." });
+
+    // Criar sessão com os dados do usuário
+    req.session.usuario = {
+      id: usuario.id,
+      nome: usuario.nome,
+      email: usuario.email
+    };
+    res.status(200).json({
+      message: "Login realizado com sucesso!",
+      usuario: {
+        id: usuario.id,
+        nome: usuario.nome,
+        email: usuario.email
+      }
+    });
+  });
+});
 module.exports = router;

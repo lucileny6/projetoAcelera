@@ -1,5 +1,6 @@
 const usuariosModel = require('../models/usuariosModels'); // mantém com "s"
 
+
 // Cadastrar novo usuário
 function cadastrar(req, res) {
   const { nome, email, senha } = req.body;

@@ -1,73 +1,41 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HoloTime</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/principal.css"/>
-    <link rel="stylesheet" href="./styles/header.css"/>
-    <link rel="stylesheet" href="./styles/banner.css"/>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav" aria-label="navegaçao principal">
-       
-          <ul class="nav__list">
-        
-            <li class="menu__toggle">
-              <button class="menu__toggle__icon" aria-label="menu hamburguer">
-              <img src="./images/menu.svg" alt="menu hamburguer">
-              </button>
-            </li>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>HoloTime - Bem-vindo</title>
+  <link rel="stylesheet" href="./styles/principal.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="login.html" class="nav__link">Login</a></li>
+        <li class="nav__item"><a href="cadastro.html" class="nav__link">Cadastre-se</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <li class="nav__item">
-              <a href="configuracao.html">
-               <video autoplay loop muted width="240" height="200"> 
-             <source src="./videos/logo.mp4" type="video/mp4"> </video>     
-            </a>
-            </li>
+  <main class="faixa-azul">
+    <h1>Bem-vindo ao HoloTime</h1>
+    <p>
+      O HoloTime é um projeto inovador que transforma conceitos de eletrônica e design em uma experiência visual envolvente com um relógio holográfico.
+    </p>
+    <p>
+      Combinando Arduino, LEDs e sensores, o sistema projeta números no ar com precisão e beleza, utilizando o efeito de persistência da visão (POV).
+    </p>
+    <p>
+      Explore nosso projeto, cadastre-se e descubra como tecnologia e criatividade podem criar algo surpreendente!
+    </p>
 
-            <li class="nav__item">
-              <a href="#" class="nav__link">Início</a>
-            </li>
+   <!-- <img src="./images/codigoArduino.jpeg" alt="Ilustração do Projeto HoloTime" class="imagem-projeto" /> -->
+  </main>
 
-            <li class="nav__item">
-              <a href="configuracao.html" class="nav__link">Configuração</a>
-            </li>
-
-            <li class="nav__item">
-              <a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a>
-            </li>
-            
-            <li class="nav__item">
-              <a href="quemsomos.html" class="nav__link">Quem Somos</a>
-            </li>
-
-            <li class="nav__item nav__icons">
-              <a href="perfil.html" class="perfil">
-                <img src="./images/Perfil.svg" alt="Meu perfil" class="avatar">
-                <span class="nome-usuario oculto">Nome do Usuário</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
-    <!-- Faixa azul principal -->
-    <section class="faixa-azul"></section>
-
-    <!-- Rodapé -->
-    <footer class="rodape-azul">
-      <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
-    </footer>
-
-
-
-  </body>
- </html>
+  <footer class="rodape-azul">
+    <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
+  </footer>
+  <script defer src="script.js"></script>
+</body>
+</html>

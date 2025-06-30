@@ -1,14 +1,15 @@
+<!-- home.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HoloTime</title>
+    <title>HoloTime - Relógio Holograma POV</title>
 
     <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap" rel="stylesheet"/>
 
     <!-- Estilos -->
     <link rel="stylesheet" href="./styles/home.css" />
@@ -20,50 +21,53 @@
       <nav class="nav" aria-label="navegação principal">
         <ul class="nav__list">
           <li class="nav__item">
+            <video autoplay loop muted width="120" height="100">
+              <source src="./videos/logo.mp4" type="video/mp4" />
+            </video>
+          </li>
+
+          <li class="nav__item"><a href="principal.html" class="nav__link">Inicio</a></li>
+          <li class="nav__item"><a href="esquema.html" class="nav__link">Esquema Eletrônico</a></li>
+          <li class="nav__item"><a href="codigo.html" class="nav__link">Código</a></li>
+          <li class="nav__item"><a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a></li>
+          <li class="nav__item"><a href="configuracao.html" class="nav__link">Atulizar a hora do Relogio</a></li>
           
-              <video autoplay loop muted width="230" height="200">
-                <source src="./videos/logo.mp4" type="video/mp4" />
-              </video>
-            </a>
-          </li>
-          <li class="menu__toggle">
-            <button class="menu__toggle__icon" aria-label="menu hamburguer">
-              <img src="./images/menu.svg" alt="menu hamburguer" />
-            </button>
-          </li>
-  
-          <li class="nav__item">
-            <a href="#" class="nav__link">Início</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="#" class="nav__link">Configuração</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a>
-          </li>
-
-          <li class="nav__item">
-            <a href="quemsomos.html" class="nav__link">Quem Somos</a>
-          </li>
-  
-          <div class="nav__item  nav__auth">
-            <a href="login.html" class="btn">Login</a>
-            <a href="cadastro.html" class="btn">Cadastre-se</a>
-          </div>
+         
         </ul>
       </nav>
     </header>
-    
-    <!-- Faixa azul principal -->
-    <section class="faixa-azul"></section>
-    
-    <!-- Rodapé -->
+
+
+    <main class="faixa-azul" style="text-align: center; color: white; padding: 2rem;">
+      <h1 style="font-family: var(--fonte-titulo); font-size: var(--font-size-xl); margin-bottom: 1rem;">
+        Bem-vindo ao HoloTime 
+    </h1>
+    <!-- Nome do usuário logado -->
+    <div style="text-align: right; padding: 0.5rem 1rem; color: white; font-family: Poppins, sans-serif;">
+      Olá, <strong><span id="nome-usuario-topo"></span></strong>!
+     
+    </div>
+
+      <p style="font-size: var(--font-size-m); max-width: 600px; margin: auto;">
+        Um projeto de relógio holográfico com efeito POV usando Arduino Nano.
+        Aqui você encontrará o esquema eletrônico, funcionamento, código e documentação completa. 
+        
+      </p>
+
+      <div style="margin-top: 2rem;">
+        <video controls width="600" >
+          <source src="./videos/WhatsApp Video 2025-06-20 at 19.36.09.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeos.
+        </video>
+      </div>
+    </main>
+
     <footer class="rodape-azul">
       <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
     </footer>
-    <script defer src="script.js"></script>
+
+    <script defer src="./script.js"></script>
+    <script defer src="./login.js"></script>
     
   </body>
-</html> 
+</html>

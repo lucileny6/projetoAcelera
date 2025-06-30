@@ -1,5 +1,12 @@
 console.log("Arquivo cadastro.js carregado!");
 
+const form = document.querySelector('#form-cadastro')
+  
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  cadastrarUsuario()
+})
+
   async function cadastrarUsuario() {
     console.log("Função cadastrarUsuario foi chamada!");
     const nome = document.getElementById('nome').value;

@@ -140,11 +140,11 @@ body {
 }
 
 .nav__item video {
-  transform: translateX(-700px);
+  transform: translateX(-800px);
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 70%;
+  width: 120%;
 }
 
 .nav__item {

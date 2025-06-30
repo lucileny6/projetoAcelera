@@ -1,58 +1,46 @@
+<!-- public/sobreoprojeto.html -->
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre o Projeto</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/sobreprojeto.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/banner.css" />
+  <title>Sobre o Projeto - HoloTime</title>
+  <link rel="stylesheet" href="./styles/sobreoprojeto.css" />
+  <link rel="stylesheet" href="./styles/header.css" />
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 <body>
   <header class="header">
-    <nav class="nav" aria-label="navegação principal">
+    <nav class="nav">
       <ul class="nav__list">
-        <li class="menu__toggle">
-          <button class="menu__toggle__icon" aria-label="menu hamburguer">
-            <img src="./images/menu.svg" alt="menu hamburguer" />
-          </button>
-        </li>
-        <li class="nav__item">
+        <li class="nav__item"><a href="home.html" class="nav__link">Voltar</a></li>
         
-            <video autoplay loop muted width="240" height="200">
-              <source src="./videos/logo.mp4" type="video/mp4" />
-            </video>
-          </a>
-        </li>
-
-        <li class="nav__item"><a href="principal.html" class="nav__link">Início</a></li>
-        <li class="nav__item"><a href="configuracao.html" class="nav__link">Configuração</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Sobre o Projeto</a></li>
-        <li class="nav__item"><a href="quemsomos.html" class="nav__link">Quem Somos</a></li>
-
-        <li class="nav__item nav__icons">
-          <div class="perfil">
-            <img src= "./images/Perfil.svg" alt="Meu perfil" class="avatar">
-            <span class="nome-usuario">Nome do Usuário</span>
-          </div>
-        </li>
+        
       </ul>
     </nav>
   </header>
-   <!-- Faixa azul principal -->
-   <section class="faixa-azul"></section>
 
-   <!-- Rodapé -->
-   <footer class="rodape-azul">
-     <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
-   </footer>
+  <main class="faixa-azul">
+    <h1>Sobre o Projeto HoloTime</h1>
+    <p>
+      O HoloTime é um projeto acadêmico criado para demonstrar o funcionamento de um relógio holográfico utilizando o efeito de persistência da visão (POV). Inspirado em tecnologias criativas e acessíveis, o objetivo é unir eletrônica, programação e design para criar uma experiência visual única.
+    </p>
 
-  
- </body>
+    <p>
+      Este projeto utiliza um Arduino Nano, LEDs e sensores para projetar ponteiros de um relógio analógico no ar por meio da rotação sincronizada. A proposta também visa facilitar o aprendizado e inspirar outros estudantes a explorarem soluções inovadoras.
+    </p>
+
+    <img src="./images/projeto_ilustracao.png" alt="Ilustração do Projeto HoloTime" class="imagem-projeto" />
+
+    <div style="margin-top: 2rem;">
+      <video controls width="600" poster="./images/thumb.png">
+        <source src="./videos/WhatsApp Video 2025-06-20 at 19.36.09.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      
+  </main>
+
+  <footer class="rodape-azul">
+    <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
+  </footer>
+</body>
 </html>

@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuração</title>
+  <title>Atualizar Horário - HoloTime</title>
+
+  <!-- Fontes e estilos -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Poppins:wght@100..900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="./styles/header.css" />
   <link rel="stylesheet" href="./styles/banner.css" />
   <link rel="stylesheet" href="./styles/configuracao.css" />
@@ -18,136 +17,60 @@
   <header class="header">
     <nav class="nav" aria-label="navegação principal">
       <ul class="nav__list">
-        <li class="menu__toggle">
-          <button class="menu__toggle__icon" aria-label="menu hamburguer">
-            <img src="./images/menu.svg" alt="menu hamburguer" />
-          </button>
-        </li>
-
         <li class="nav__item">
-          <a href="index.html">
-            <video autoplay loop muted width="240" height="200">
-              <source src="./videos/logo.mp4" type="video/mp4" />
-            </video>
+      
+          <video autoplay loop muted width="120" height="100">
+            <source src="./videos/logo.mp4" type="video/mp4" />
+          </video>
           </a>
         </li>
+        <li class="nav__item"><a href="home.html" class="nav__link">Voltar</a></li>
 
-        <li class="nav__item"><a href="principal.html" class="nav__link">Início</a></li>
-        <li class="nav__item"><a href="#" class="nav__link">Configuração</a></li>
-        <li class="nav__item"><a href="sobreoprojeto.html" class="nav__link">Sobre o Projeto</a></li>
-        <li class="nav__item"><a href="quemsomos.html" class="nav__link">Quem Somos</a></li>
-
-        <li class="nav__item nav__icons">
-          <a href="#" aria-label="Perfil">
-            <img src="./images/Perfil.svg" alt="Meu Perfil" />
-          </a>
-        </li>
+        
       </ul>
     </nav>
   </header>
 
-  <!-- Conteúdo principal dentro da faixa azul -->
   <section class="faixa-azul">
-    <main>
-      <h1>Controle Arduino</h1>
+    <main style="text-align: center; color: white; padding: 2rem;">
+      <h1>Atualização de Horário do Relógio</h1>
+      <p style="max-width: 600px; margin: auto; font-size: 1.1rem;">
+        Use o campo abaixo para definir um novo horário que será enviado ao relógio (simulado).
+      </p>
 
-      <section>
-        <h2>Programar Horário</h2>
-        <label for="horario">Horário (AAAA-MM-DDTHH:MM):</label>
-        <input type="datetime-local" id="horario" />
+      <div style="margin-top: 2rem;">
+        <label for="horario" style="display: block; margin-bottom: 0.5rem;">Novo Horário:</label>
+        <input type="datetime-local" id="horario" style="padding: 0.5rem; font-size: 1rem;" />
 
-        <label for="acao">Ação:</label>
-        <select id="acao">
-          <option value="LIGAR">Ligar LED</option>
-          <option value="DESLIGAR">Desligar LED</option>
-        </select>
-
-        <button id="btnProgramar">Programar</button>
-      </section>
-
-      <section>
-        <h2>Horários Programados</h2>
-        <button id="btnListar">Atualizar lista</button>
-        <table>
-          <thead>
-            <tr><th>ID</th><th>Horário</th><th>Ação</th></tr>
-          </thead>
-          <tbody id="listaHorarios"></tbody>
-        </table>
-      </section>
-
-      <section>
-        <h2>Mensagens do Arduino</h2>
-        <div id="mensagensArduino"></div>
-      </section>
-
-      <section>
-        <h2>Controle Manual</h2>
-        <button id="btnLigar">Ligar LED</button>
-        <button id="btnDesligar">Desligar LED</button>
-      </section>
+        <button id="btnAtualizar" style="margin-top: 1rem; padding: 0.7rem 2rem; font-weight: bold; border: none; border-radius: 8px; background-color: white; color: #2c4766;">
+          Atualizar Horário
+        </button>
+      </div>
     </main>
   </section>
 
-  <!-- Rodapé -->
   <footer class="rodape-azul">
-    <p>© 2025 HoloTime</p>
+    <p style="color: white; text-align: center; padding: 2rem;">© 2025 HoloTime</p>
   </footer>
 
-  <script src="/socket.io/socket.io.js"></script>
   <script>
-    const socket = io();
-
-    async function listarHorarios() {
-      const res = await fetch('/horarios');
-      const data = await res.json();
-      const tbody = document.getElementById('listaHorarios');
-      tbody.innerHTML = '';
-      data.forEach(item => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${item.id}</td><td>${new Date(item.horario).toLocaleString()}</td><td>${item.acao}</td>`;
-        tbody.appendChild(tr);
-      });
-    }
-
-    document.getElementById('btnProgramar').addEventListener('click', async () => {
+    document.getElementById('btnAtualizar').addEventListener('click', async () => {
       const horario = document.getElementById('horario').value;
-      const acao = document.getElementById('acao').value;
       if (!horario) {
-        alert('Informe o horário');
+        alert('Por favor, selecione o horário.');
         return;
       }
+
       const res = await fetch('/programar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ horario, acao })
+        body: JSON.stringify({ horario, acao: 'ATUALIZAR_HORA' })
       });
+
       const json = await res.json();
-      alert(json.message);
-      listarHorarios();
+      alert(json.message || 'Horário atualizado com sucesso!');
     });
-
-    document.getElementById('btnLigar').addEventListener('click', async () => {
-      await fetch('/led/on', { method: 'POST' });
-      alert('LED ligado');
-      listarHorarios();
-    });
-
-    document.getElementById('btnDesligar').addEventListener('click', async () => {
-      await fetch('/led/off', { method: 'POST' });
-      alert('LED desligado');
-      listarHorarios();
-    });
-
-    const mensagensDiv = document.getElementById('mensagensArduino');
-    socket.on('arduinoData', (msg) => {
-      const p = document.createElement('p');
-      p.textContent = msg;
-      mensagensDiv.appendChild(p);
-      mensagensDiv.scrollTop = mensagensDiv.scrollHeight;
-    });
-
-    listarHorarios();
   </script>
 </body>
 </html>
+

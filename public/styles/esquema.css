@@ -1,0 +1,42 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  h1 {
+    color: #2c4766;
+    margin-bottom: 1rem;
+  }
+  
+  .imagem-container img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+  
+  .download {
+    margin-top: 1.5rem;
+  }
+  
+  .btn {
+    text-decoration: none;
+    background-color: #2c4766;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #1a2e45;
+  }
+  

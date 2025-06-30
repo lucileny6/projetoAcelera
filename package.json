@@ -2,5 +2,10 @@
   "nome": "Seu Nome",
   "telefone": "123456789",
   "email": "email@exemplo.com",
-  "senha": "suaSenha123"
+  "senha": "suaSenha123",
+  "dependencies": {
+    "express-session": "^1.18.1",
+    "socket.io": "^4.8.1",
+    "sqlite3": "^5.1.7"
+  }
 }
